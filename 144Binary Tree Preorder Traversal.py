@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# Iterations
 class Solution:
     def preorderTraversal(self, root: TreeNode) -> List[int]:
         ans=[]
@@ -20,5 +21,14 @@ class Solution:
             if node.left:
                 stack.append(node.left)
         return order
-            
+    
+ #   Recursive
+class Solution(object):
+    def preorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right) if root else []
+
         
